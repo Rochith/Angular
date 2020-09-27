@@ -1,0 +1,126 @@
+<html>
+<body>
+    <nav class="navbar navbar-expand-lg  static-top" style="background-color: black;">
+          <div class="container">
+            <a class="navbar-brand" href="https://en.wikipedia.org/wiki/DXC_Technology">
+            <img src="https://i.pinimg.com/600x315/39/ed/69/39ed691c60770fb3d3bb13c9e9cfb240.jpg" width="100" height="75" alt="">
+                </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link"  routerLink="/register">
+                        <span class="sr-only">(current)</span>
+                      </a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link"   *ngIf="loginservice.isUserLoggedIn()"   routerLink="/home">Home</a>
+                </li>
+        <!--         <li class="nav-item">
+                  <a class="nav-link"     routerLink="/Register">Register</a>
+                </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link"  style="color: white"   routerLink="/login-user">LogIn</a>
+                    </li>
+        <!--         <li class="nav-item">
+                  <a class="nav-link"  style="color: white"   routerLink="/Logout">LogOut</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      
+    
+<div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post" #addform="ngForm" (ngSubmit)="addRegister(addform.value)">
+		<h2>REGISTER </h2>
+		<p class="hint-text">Create account for Flash Transaction in Flash Trans</p>
+        <div class="form-group">
+			<div class="column">
+Account Type :
+<select name="accountType" ngModel required="required">
+
+<option value="SAVINGS ACCOUNT">SAVINGS ACCOUNT</option>
+<option value="FIXED DEPOSIT">FIXED DEPOSIT</option>
+<option value="REOCCURING ACCOUNT">REOCCURING ACCOUNT</option>
+<option value="ADDING NEW SERVICES" disabled>ADDING NEW SERVICES</option> 
+
+
+</select>
+             
+         </div>     
+         <br><br>
+              
+				<div class="col"><input type="text" class="form-control" ngModel name="firstName" placeholder="First Name" required="required"></div>
+          <br>
+				<div class="col"><input type="text" class="form-control" ngModel name="lastName" placeholder="Last Name" required="required"></div>
+			</div>     <br>
+         
+    
+  <label for="dateofbirth">Birthday: </label>
+  <input type="date" id="dateOfBirth" ngModel name="dateOfBirth" >
+
+      <br><br>
+      
+Gender :
+          <br>
+          <br>
+<input type="radio" value="Male" ngModel name="gender" checked > Male 
+<input type="radio" value="Female" ngModel name="gender"> Female 
+<input type="radio" value="Other" ngModel name="gender"> Other
+
+      <br><br>
+      Phone :
+<input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/> 
+<input type="text" name="phoneNumber" ngModel placeholder="9999999999" size="10" required> 
+ 
+         <br>
+       <br>
+          <div>
+        </div>
+      
+      <div class="form-group">
+        	<input type="username" class="form-control" ngModel name="userName" placeholder="User Name" required="required">
+        </div>
+      
+      <div class="form-group">
+        	<input type="email" class="form-control" ngModel name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" ngModel name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control"  name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>        
+      
+      
+      <div class="form-group">
+            <input type="text" class="form-control" ngModel name="transactionPin" placeholder="Flashpin" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Flashpin" required="required">
+        </div>        
+      
+       <div class="form-group">
+        	<input type="aadhaar" class="form-control" ngModel name="aadharNumber" placeholder="Aadhaar Number" required="required">
+        </div>
+            <div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+</div>
+</body>
+<router-outlet></router-outlet>
+<footer      class="footer">
+        
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark static-top"><p style="color: white;">All Rights are Reserved CopyRight Flash Trans 2020</p></nav>
+    
+
+</footer>
+</html>
