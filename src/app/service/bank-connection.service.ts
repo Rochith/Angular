@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
+import { ReoccuringAccount } from './reoccuringaccount';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class BankConnectionService {
   addFixedDeposit(fixed:Fixed){
     this.http.post<Fixed>(this.url+"/fdadd",fixed)
     .subscribe(fixed=>alert("Your Fixed Deposit Account is successfully" + fixed.fixedDepositId)); 
+  }
+  addReoccuringAccount(reoccuring:ReoccuringAccount){
+    this.http.post<ReoccuringAccount>(this.url+"/rdadd",reoccuring)
+    .subscribe(reoccuring=>alert("Your Reoccuring Account is successfully" + reoccuring.reoccuringAccountId));
   }
 }

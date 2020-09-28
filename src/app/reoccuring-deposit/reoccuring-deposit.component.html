@@ -8,7 +8,36 @@
             
         </div>
         <div class="col-md-4">
-            <img src="../assets/dxc helping hands.jpg">
+            <div class="signup-form">
+                <form action="/examples/actions/confirmation.php" method="post" #addform="ngForm" (ngSubmit)="addReoccuringAccount(addform.value)">
+                    <h2>Reoccuring Account </h2>
+                    <p class="hint-text">Create account for Reoccuring Account in Flash Trans</p>
+                    <div class="form-group">
+                        <div class="column">  
+                     </div>     
+                            <div ><input type="text" class="form-control" ngModel name="reoccuringAccountId" placeholder="Account Number" required="required"></div>
+                      <br>
+                            <div ><input type="text" class="form-control" ngModel name="rdName" placeholder="Account Holder" required="required"></div>
+                        </div>    
+                        From:
+                        <div>
+                        <input type="date" id="dateOfBirth" ngModel name="transactionFDate" >
+                        </div>
+                        To:
+                        <div>
+                        <input type="date" id="dateOfBirth" ngModel name="transactionTDate" >
+                        </div>
+                  <br>
+                  <div ><input type="text" class="form-control" ngModel name="transactionType" placeholder="Period" required="required"></div><br>
+                  <div class="form-group">
+                        <input type="username" class="form-control" ngModel name="balanceAmount" placeholder="Amount" required="required">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+                    </div>
+                </form>
+                <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+            </div>
         </div>
     </div>
 </div>
