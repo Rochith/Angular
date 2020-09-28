@@ -32,9 +32,15 @@ import { BankComponent } from './bank/bank.component';
     HomeComponent,
     BankComponent,
     SavingsAccountComponent,
+<<<<<<< HEAD
     FixedDepositComponent,
     ReoccuringDepositComponent
     // BillPaymentsComponent,
+=======
+    // FixedDepositComponent,
+    // ReoccuringDepositComponent,
+     BillPaymentsComponent
+>>>>>>> 0d95decf51214fa8afcbbe42bf74174b03f74ba3
     // RemittanceManagementComponent
   ],
   imports: [
