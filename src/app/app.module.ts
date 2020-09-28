@@ -31,10 +31,10 @@ import { BankComponent } from './bank/bank.component';
     RegisterComponent,
     HomeComponent,
     BankComponent,
-    SavingsAccountComponent
+    SavingsAccountComponent,
     // FixedDepositComponent,
     // ReoccuringDepositComponent,
-    // BillPaymentsComponent,
+     BillPaymentsComponent
     // RemittanceManagementComponent
   ],
   imports: [

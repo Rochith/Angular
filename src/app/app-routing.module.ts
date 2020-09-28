@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
   {path:'savings-account',component:SavingsAccountComponent,canActivate:[AuthGuardService]},
    {path:'fixed-deposit',component:FixedDepositComponent,canActivate:[AuthGuardService]},
-  // {path:'bill-payments',component:BillPaymentsComponent},
+   {path:'bill-payments',component:BillPaymentsComponent},
   {path:'register',component:RegisterComponent},
   // {path:'remittance-management',component:RemittanceManagementComponent},
    {path:'login-user',component:LoginUserComponent},
