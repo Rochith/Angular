@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
+import { BankConnectionService } from '../service/bank-connection.service';
 
 @Component({
   selector: 'app-reoccuring-deposit',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReoccuringDepositComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bankConnectionService:BankConnectionService,public loginservice:AuthenticationService) { }
 
   ngOnInit(): void {
   }

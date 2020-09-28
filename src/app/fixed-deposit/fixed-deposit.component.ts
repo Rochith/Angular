@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
+import { BankConnectionService } from '../service/bank-connection.service';
+import { Fixed } from '../service/fixeddeposite';
 
 @Component({
   selector: 'app-fixed-deposit',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FixedDepositComponent implements OnInit {
 
-  constructor() { }
+  fixed:Fixed=null;
+
+  constructor(private bankConnectionService:BankConnectionService,public loginservice:AuthenticationService) { }
 
   ngOnInit(): void {
   }
-
+  addFixedDeposit(fixed:Fixed){
+    this.bankConnectionService.addFixedDeposit(fixed);
+  }
 }

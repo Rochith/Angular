@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  static-top" style="background-color: black;">
       <div class="container">
-        <a class="navbar-brand" href="https://en.wikipedia.org/wiki/DXC_Technology">
+        <a class="navbar-brand" routerLink="/home" >
         <img src="https://i.pinimg.com/600x315/39/ed/69/39ed691c60770fb3d3bb13c9e9cfb240.jpg" width="100" height="75" alt="">
             </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,11 +8,11 @@
             </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+    <!--         <li class="nav-item active">
               <a class="nav-link"  routerLink="/register">
                     <span class="sr-only">(current)</span>
                   </a>
-                </li>
+                </li> -->
     <!--         <li class="nav-item">
               <a class="nav-link"   *ngIf="loginservice.isUserLoggedIn()"   routerLink="/home">Home</a>
             </li> -->
@@ -29,6 +29,7 @@
         </div>
       </div>
     </nav>
+    
     <router-outlet></router-outlet>
 <footer      class="footer">
         

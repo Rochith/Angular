@@ -21,9 +21,9 @@ const routes: Routes = [
   // {path:'remittance-management',component:RemittanceManagementComponent},
    {path:'login-user',component:LoginUserComponent},
   // {path:'login-admin'},
-   {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]}
+   {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]},
   // {path:'logout-admin',component:LogoutAdminComponent},
-  // {path:'reoccuring-deposit',component:ReoccuringDepositComponent}
+   {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

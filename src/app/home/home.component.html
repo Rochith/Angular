@@ -27,7 +27,7 @@
     <img src="https://www.hlb.com.my/content/dam/hlb/my/images/Personal/Deposits/Fixed-Deposit/Fixed-Deposit-Account/fixed_deposit_product_banner_en.jpg" alt="Image" style="width:1225px;height:300px;"> 
     <h1 class="card-title">Reoccuring Deposit</h1>
     <h4><p class="card-text">A recurring deposit is a special kind of term deposit offered by banks which help people with regular incomes to deposit a fixed amount every month into their recurring deposit account and earn interest at the rate applicable to fixed deposits.</p>
-    </h4>> <button type="button"  class="btn btn-primary btn-lg btn-block">Reoccuring Account Options</button>
+    </h4>> <button type="button" *ngIf="loginservice.isUserLoggedIn()" routerLink="/reoccuring-deposit"  class="btn btn-primary btn-lg btn-block">Reoccuring Account Options</button>
 
   </div>
 </div>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule}  from '@angular/common/http';
 import {FormsModule}  from '@angular/forms';
-//import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,9 +31,9 @@ import { BankComponent } from './bank/bank.component';
     RegisterComponent,
     HomeComponent,
     BankComponent,
-    SavingsAccountComponent
-    // FixedDepositComponent,
-    // ReoccuringDepositComponent,
+    SavingsAccountComponent,
+    FixedDepositComponent,
+    ReoccuringDepositComponent
     // BillPaymentsComponent,
     // RemittanceManagementComponent
   ],
@@ -44,7 +44,7 @@ import { BankComponent } from './bank/bank.component';
     AppRoutingModule
   ],
   providers: [AuthenticationService,AuthGuardService],
-  bootstrap: [BankComponent]
- // schemas:[ CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [BankComponent],
+  schemas:[ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
