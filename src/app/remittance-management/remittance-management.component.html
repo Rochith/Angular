@@ -12,13 +12,13 @@
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form action="/action_page.php" #addform="ngForm" (ngSubmit)="addRemittanceManagement(addform.value)">
       
         <div class="row">
           <div class="col-50">
           
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="rmName" ngModel placeholder="John M. Doe">
 
             <h3>Auto Pay Mode</h3>
              <label for="Amount"> Amount</label>
@@ -50,16 +50,16 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" id="cname" name="cardName"  placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardName" placeholder="1111-2222-3333-4444">
 
 
            
 
 
             <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <input type="text" id="expmonth" name="expDate" placeholder="September">
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Exp Year</label>
@@ -75,10 +75,6 @@
           <input type="text" id="cname" name="cardname" placeholder="Account Holder Name">
           <label for="ccnum">Account Number</label>
           <input type="text" id="ccnum" name="cardnumber" placeholder="Account Number">
-
-
-
-
           
         </div>
         <label>
@@ -90,5 +86,5 @@
   </div>
   
 </div>
-</body>>
+</body>
 </html>

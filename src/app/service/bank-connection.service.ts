@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
+import { RemittanceManagement } from './remittance';
 import { ReoccuringAccount } from './reoccuringaccount';
 
 @Injectable({
@@ -24,5 +25,9 @@ export class BankConnectionService {
   addReoccuringAccount(reoccuring:ReoccuringAccount){
     this.http.post<ReoccuringAccount>(this.url+"/rdadd",reoccuring)
     .subscribe(reoccuring=>alert("Your Reoccuring Account is successfully" + reoccuring.reoccuringAccountId));
+  }
+  addRemittanceManagement(remittance:RemittanceManagement){
+    this.http.post<RemittanceManagement>(this.url+"/remiadd",remittance)
+    .subscribe(remittance=>alert("Account/card deatils Added Successfully" + remittance.cardNo));
   }
 }
