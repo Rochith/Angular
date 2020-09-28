@@ -34,8 +34,8 @@ import { BankComponent } from './bank/bank.component';
     SavingsAccountComponent,
     FixedDepositComponent,
     ReoccuringDepositComponent,
-    BillPaymentsComponent
-    // RemittanceManagementComponent
+    BillPaymentsComponent,
+    RemittanceManagementComponent
   ],
   imports: [
     BrowserModule,
