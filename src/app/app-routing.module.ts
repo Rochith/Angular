@@ -14,14 +14,14 @@ import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
-  // {path:'savings-account',component:SavingsAccountComponent},
+  {path:'savings-account',component:SavingsAccountComponent,canActivate:[AuthGuardService]},
   // {path:'fixed-deposit',component:FixedDepositComponent},
   // {path:'bill-payments',component:BillPaymentsComponent},
   {path:'register',component:RegisterComponent},
   // {path:'remittance-management',component:RemittanceManagementComponent},
    {path:'login-user',component:LoginUserComponent},
   // {path:'login-admin'},
-  // {path:'logout-user',component:LogoutUserComponent},
+   {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]}
   // {path:'logout-admin',component:LogoutAdminComponent},
   // {path:'reoccuring-deposit',component:ReoccuringDepositComponent}
 ];

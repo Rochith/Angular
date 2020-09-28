@@ -25,13 +25,13 @@ import { BankComponent } from './bank/bank.component';
   declarations: [
     // AppComponent,
     LoginUserComponent,
-    // LogoutUserComponent,
+     LogoutUserComponent,
     // LoginAdminComponent,
     // LogoutAdminComponent,
     RegisterComponent,
-    HomeComponent
-    //BankComponent
-    // SavingsAccountComponent,
+    HomeComponent,
+    BankComponent,
+    SavingsAccountComponent
     // FixedDepositComponent,
     // ReoccuringDepositComponent,
     // BillPaymentsComponent,
@@ -44,7 +44,7 @@ import { BankComponent } from './bank/bank.component';
     AppRoutingModule
   ],
   providers: [AuthenticationService,AuthGuardService],
-  bootstrap: [RegisterComponent]
+  bootstrap: [BankComponent]
  // schemas:[ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
