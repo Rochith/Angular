@@ -15,7 +15,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
   {path:'savings-account',component:SavingsAccountComponent,canActivate:[AuthGuardService]},
-  // {path:'fixed-deposit',component:FixedDepositComponent},
+   {path:'fixed-deposit',component:FixedDepositComponent,canActivate:[AuthGuardService]},
   // {path:'bill-payments',component:BillPaymentsComponent},
   {path:'register',component:RegisterComponent},
   // {path:'remittance-management',component:RemittanceManagementComponent},

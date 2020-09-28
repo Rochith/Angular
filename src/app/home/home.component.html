@@ -43,7 +43,7 @@
     <img src="https://ictproject.org/wp-content/uploads/2020/01/invest-in-fixed-deposits-1.png" alt="Image" style="width:1225px;height:300px;"> 
     <h1 class="card-title">Fixed Deposit</h1>
     <h4><p class="card-text">A fixed deposit is a financial instrument provided by banks or NBFCs which provides investors a higher rate of interest than a regular savings account, until the given maturity date. It may or may not require the creation of a separate account.</p>
-    </h4>> <button type="button" class="btn btn-primary btn-lg btn-block">Fixed Deposit Options</button>
+    </h4>> <button type="button" *ngIf="loginservice.isUserLoggedIn()" routerLink="/fixed-deposit" class="btn btn-primary btn-lg btn-block">Fixed Deposit Options</button>
 
   </div>
 </div>
