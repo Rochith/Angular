@@ -14,6 +14,8 @@ import { RemittanceManagementComponent } from './remittance-management/remittanc
 import { ReoccuringDepositComponent } from './reoccuring-deposit/reoccuring-deposit.component';
 import { SavingsAccountComponent } from './savings-account/savings-account.component';
 import { AuthGuardService } from './service/auth-guard.service';
+import { TransferComponent } from './transfer/transfer.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
@@ -28,7 +30,9 @@ const routes: Routes = [
   // {path:'logout-admin',component:LogoutAdminComponent},
    {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]},
    {path:'mini-statement',component:MiniStatementComponent,canActivate:[AuthGuardService]},
-   {path:'estatement',component:EstatementComponent,canActivate:[AuthGuardService]}
+   {path:'estatement',component:EstatementComponent,canActivate:[AuthGuardService]},
+   {path:'withdraw',component:WithdrawComponent,canActivate:[AuthGuardService]},
+   {path:'transfer',component:TransferComponent,canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

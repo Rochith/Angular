@@ -22,6 +22,8 @@ import { AuthGuardService } from './service/auth-guard.service';
 import { BankComponent } from './bank/bank.component';
 import { MiniStatementComponent } from './mini-statement/mini-statement.component';
 import { EstatementComponent } from './estatement/estatement.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { EstatementComponent } from './estatement/estatement.component';
     BillPaymentsComponent,
     RemittanceManagementComponent,
     MiniStatementComponent,
-    EstatementComponent
+    EstatementComponent,
+    WithdrawComponent,
+    TransferComponent
   ],
   imports: [
     BrowserModule,
