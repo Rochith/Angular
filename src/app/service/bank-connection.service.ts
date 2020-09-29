@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Admin } from './admin';
 import { BillPayments } from './billpayments';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
@@ -39,5 +40,9 @@ export class BankConnectionService {
   addBillPayments(billpayments:BillPayments){
     this.http.post<BillPayments>(this.url+"/bill",billpayments)
     .subscribe(billpayments=>alert("Payments Successful"+billpayments.billNumber));
+  }
+  addAdmin(admin:Admin){
+    this.http.post<Admin>(this.url+"/deposit",admin)
+    .subscribe(admin=>alert("Added successfully"+admin.accountNumber));
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Admin } from '../service/admin';
+import { AuthenticationService } from '../service/authentication.service';
+import { BankConnectionService } from '../service/bank-connection.service';
 
 @Component({
   selector: 'app-login-admin',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bankConnectionService:BankConnectionService,public loginservice:AuthenticationService) { }
 
   ngOnInit(): void {
   }
-
+  addAdmin(admin:Admin){
+    this.bankConnectionService.addAdmin(admin);
+  }
 }

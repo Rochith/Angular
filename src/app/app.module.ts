@@ -30,7 +30,7 @@ import { TransferComponent } from './transfer/transfer.component';
     // AppComponent,
     LoginUserComponent,
      LogoutUserComponent,
-    // LoginAdminComponent,
+    LoginAdminComponent,
     // LogoutAdminComponent,
     RegisterComponent,
     HomeComponent,

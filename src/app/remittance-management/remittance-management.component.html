@@ -18,7 +18,7 @@
           <div class="col-50">
           
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="rmName" ngModel placeholder="John M. Doe">
+            <input type="text" id="fname" required="required" name="rmName" ngModel placeholder="John M. Doe">
 
             <h3>Auto Pay Mode</h3>
              <label for="Amount"> Amount</label>
@@ -50,24 +50,24 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardName" ngModel  placeholder="John More Doe">
+            <input type="text" id="cname" name="cardName" required="required" ngModel  placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardNo" ngModel placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardNo" required="required" ngModel placeholder="1111-2222-3333-4444">
 
 
            
 
 
             <label for="expmonth">Email</label>
-            <input type="text" id="expmonth" name="email" ngModel placeholder="Email">
+            <input type="text" id="expmonth" name="email" required="required" ngModel placeholder="Email">
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Exp MM/YYYY</label>
-                <input type="text" id="expyear" name="expDate" placeholder="MM/YY">
+                <input type="text" id="expyear" name="expDate" required="required" ngModel placeholder="MM/YY">
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" ngModel placeholder="352">
+                <input type="text" id="cvv" name="cvv" required="required" ngModel placeholder="352">
               </div>
             </div>
           </div>
