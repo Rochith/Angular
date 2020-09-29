@@ -10,7 +10,7 @@ import { Fixed } from '../service/fixeddeposite';
 })
 export class FixedDepositComponent implements OnInit {
 
-  fixed:Fixed=null;
+  fixed:Fixed;
 
   constructor(private bankConnectionService:BankConnectionService,public loginservice:AuthenticationService) { }
 

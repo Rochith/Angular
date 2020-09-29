@@ -1,0 +1,21 @@
+<br>
+<div>
+<table class="table table-dark  col-md-5">
+
+    <tr> 
+    <th>TRANSACTION_DATE</th>
+    <th>TRANSACTION_TYPE</th>
+    <th>BALANCE</th> </tr>
+
+    <tr *ngFor="let ministatements of estatementList">
+
+            <td>{{ministatements.transactionDate}}</td>
+            <td>{{ministatements.transactionType}}</td>
+            <td>{{ministatements.balance}}</td>
+
+    </tr>
+
+
+    </table>
+    </div>
+    <br><br><br><br>

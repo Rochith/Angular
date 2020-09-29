@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BillPaymentsComponent } from './bill-payments/bill-payments.component';
+import { EstatementComponent } from './estatement/estatement.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
    {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]},
   // {path:'logout-admin',component:LogoutAdminComponent},
    {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]},
-   {path:'mini-statement',component:MiniStatementComponent,canActivate:[AuthGuardService]}
+   {path:'mini-statement',component:MiniStatementComponent,canActivate:[AuthGuardService]},
+   {path:'estatement',component:EstatementComponent,canActivate:[AuthGuardService]}
 ];
 
 @NgModule({
