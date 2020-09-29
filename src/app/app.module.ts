@@ -52,7 +52,7 @@ import { TransferComponent } from './transfer/transfer.component';
     AppRoutingModule
   ],
   providers: [AuthenticationService,AuthGuardService],
-  bootstrap: [BankComponent],
-  schemas:[ CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [BankComponent]
+ // schemas:[ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

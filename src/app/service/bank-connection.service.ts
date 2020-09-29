@@ -26,6 +26,7 @@ export class BankConnectionService {
   addReoccuringAccount(reoccuring:ReoccuringAccount){
     this.http.post<ReoccuringAccount>(this.url+"/rdadd",reoccuring)
     .subscribe(reoccuring=>alert("Your Reoccuring Account is successfully" + reoccuring.reoccuringAccountId));
+    console.log(reoccuring);
   }
   addRemittanceManagement(remittance:RemittanceManagement){
     this.http.post<RemittanceManagement>(this.url+"/remiadd",remittance)
