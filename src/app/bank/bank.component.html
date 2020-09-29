@@ -22,13 +22,12 @@
                 <li class="nav-item">
                   <a class="nav-link"  style="color: white"   routerLink="/login-user">Login</a>
                 </li>
-                <li class="nav-item">
-                      <a class="nav-link"  style="color: white"   routerLink="/login-admin">Admin Login</a>
-                    </li>
-
             <li class="nav-item">
-              <a class="nav-link"  style="color: white"   routerLink="/logout-user">Logout</a>
+              <a class="nav-link"  style="color: white"   routerLink="/logout-user">LogOut</a>
             </li>
+    <li class="nav-item">
+                  <a class="nav-link" *ngIf="loginservice.isUserLoggedIn()"  style="color: white"   routerLink="/login-admin">Admin Login</a>
+                </li>
           </ul>
         </div>
       </div>

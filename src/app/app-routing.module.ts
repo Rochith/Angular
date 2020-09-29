@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'remittance-management',component:RemittanceManagementComponent,canActivate:[AuthGuardService]},
    {path:'login-user',component:LoginUserComponent},
-  {path:'login-admin',component:LoginAdminComponent},
+  {path:'login-admin',component:LoginAdminComponent,canActivate:[AuthGuardService]},
    {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]},
   // {path:'logout-admin',component:LogoutAdminComponent},
    {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]},
