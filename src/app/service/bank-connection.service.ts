@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BillPayments } from './billpayments';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
 import { RemittanceManagement } from './remittance';
@@ -34,5 +35,9 @@ export class BankConnectionService {
   }
   getAllMiniStatements():Observable<any>{
     return this.http.get(this.url+"/getmini");
+  }
+  addBillPayments(billpayments:BillPayments){
+    this.http.post<BillPayments>(this.url+"/bill",billpayments)
+    .subscribe(billpayments=>alert("Payments Successful"+billpayments.billNumber));
   }
 }

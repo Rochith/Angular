@@ -13,20 +13,20 @@
             <div class="container">
               <div class="row my-5">
                   <div class="col-md-4">
-                    <form action="/examples/actions/confirmation.php" method="post">
+                    <form action="/examples/actions/confirmation.php" method="post" #addbillform="ngForm" (ngSubmit)="addBillPayments(addbillform.value)">
                       <div>  <h1 class="text-allign : center">PAY BILL</h1></div> 
                     <p class="col hint-text">   Pay All Your Bills In One Flash </p>
                     <div class="form-group">
                         <div class="column">
-<!-- lkajshgfdkj -->
 
-                            <div class="col"><input type="text" class="form-control" ngModel name="#" placeholder="Account Number" required="required"></div>
+
+                            <div class="col"><input type="text" class="form-control" ngModel name="billNumber" placeholder="Account Number" required="required"></div>
 
 
                             <br>
                             <div class="col">
             SELECT BILL PAYMENT :
-            <select name="accountType" ngModel required="required">
+            <select name="billType" ngModel required="required">
             
             <option value="ACT FIBERNET BILL">ACT FIBERNET</option>
             <option value="WATER BILL">WATER BILL</option>
@@ -46,13 +46,13 @@
                          
                      </div>     
                     
-                            <div class="col"><input type="text" class="form-control" ngModel name="#" placeholder="Enter Amount" required="required"></div>
+                            <div class="col"><input type="text" class="form-control" ngModel name="billAmount" placeholder="Enter Amount" required="required"></div>
                         </div>     <br>
                      
              
                   
                   <div class="col form-group">
-                        <input type="Flashpin" class="form-control" ngModel name="Flashpin" placeholder="Flash Pin" required="required">
+                        <input type="Flashpin" class="form-control" ngModel name="transactionPin" placeholder="Flash Pin" required="required">
                     </div>
                   
                         <div class="col form-group">

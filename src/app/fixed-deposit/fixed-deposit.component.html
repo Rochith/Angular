@@ -6,9 +6,9 @@
                
                 <h2><b>FIXED DEPOSIT</b></h2>
                 <form action="" method="post" #addfixedfrom="ngForm" (ngSubmit)="addFixedDeposit(addfixedfrom.value)">
-                    Account Number:<br>
+                    Flashpin:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="fixedDepositId" disabled ngModel placeholder="Account Number is Alredy Generated"  >
+                        <input type="text" class="form-control" name="transactionPin" ngModel placeholder="Enter MPin"  >
                     </div>
                     Account Holder:<br>
                     <div class="form-group">

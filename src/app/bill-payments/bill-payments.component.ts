@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
+import { BankConnectionService } from '../service/bank-connection.service';
+import { BillPayments } from '../service/billpayments';
 
 @Component({
   selector: 'app-bill-payments',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillPaymentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bankConnectionService:BankConnectionService,public loginservice:AuthenticationService) { }
 
   ngOnInit(): void {
   }
-
+  addBillPayments(billpayments:BillPayments){
+    this.bankConnectionService.addBillPayments(billpayments);
+  }
 }

@@ -5,5 +5,6 @@ export class ReoccuringAccount{
     transactionFDate:string;
     transactionType:string;
     balanceAmount:number;
+    transactionPin:number;
     constructor(){}
 }

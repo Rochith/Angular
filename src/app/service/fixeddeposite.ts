@@ -5,5 +5,6 @@ export class Fixed{
     transactionTdate:string;
     transactionType:string;
     balanceAmount:number;
+    transactionPin:number;
     constructor(){}
 }
