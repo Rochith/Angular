@@ -24,10 +24,11 @@
                     </div>
                     Amount:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Amount" name="balanceAmount" >
+                        <input type="text" class="form-control" ngModel placeholder="Amount" name="balanceAmount" >
                     </div>
-                   
-                    <button type="submit" [disabled]="addform.invalid"   name="submit" class="btn btn-primary">Submit</button>
+                   <div class="form-group">
+                    <button type="submit"   name="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>  
                 <!-- <form  #addform="ngForm" (ngSubmit)="addFixedDeposit(addform.value)" >
                     Account Number:

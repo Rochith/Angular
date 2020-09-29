@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { BillPaymentsComponent } from './bill-payments/bill-payments.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
 import { HomeComponent } from './home/home.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LogoutAdminComponent } from './logout-admin/logout-admin.component';
 import { LogoutUserComponent } from './logout-user/logout-user.component';
+import { MiniStatementComponent } from './mini-statement/mini-statement.component';
 import { RegisterComponent } from './register/register.component';
 import { RemittanceManagementComponent } from './remittance-management/remittance-management.component';
 import { ReoccuringDepositComponent } from './reoccuring-deposit/reoccuring-deposit.component';
@@ -20,10 +22,11 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'remittance-management',component:RemittanceManagementComponent,canActivate:[AuthGuardService]},
    {path:'login-user',component:LoginUserComponent},
-  // {path:'login-admin'},
+  {path:'login-admin',component:LoginAdminComponent},
    {path:'logout-user',component:LogoutUserComponent,canActivate:[AuthGuardService]},
   // {path:'logout-admin',component:LogoutAdminComponent},
-   {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]}
+   {path:'reoccuring-deposit',component:ReoccuringDepositComponent,canActivate:[AuthGuardService]},
+   {path:'mini-statement',component:MiniStatementComponent,canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

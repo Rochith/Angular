@@ -20,6 +20,7 @@ import { RemittanceManagementComponent } from './remittance-management/remittanc
 import { AuthenticationService } from './service/authentication.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { BankComponent } from './bank/bank.component';
+import { MiniStatementComponent } from './mini-statement/mini-statement.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BankComponent } from './bank/bank.component';
     FixedDepositComponent,
     ReoccuringDepositComponent,
     BillPaymentsComponent,
-    RemittanceManagementComponent
+    RemittanceManagementComponent,
+    MiniStatementComponent
   ],
   imports: [
     BrowserModule,

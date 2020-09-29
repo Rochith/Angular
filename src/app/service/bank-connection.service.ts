@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
 import { RemittanceManagement } from './remittance';
@@ -29,5 +30,8 @@ export class BankConnectionService {
   addRemittanceManagement(remittance:RemittanceManagement){
     this.http.post<RemittanceManagement>(this.url+"/remiadd",remittance)
     .subscribe(remittance=>alert("Account/card deatils Added Successfully" + remittance.cardNo));
+  }
+  getAllMiniStatements():Observable<any>{
+    return this.http.get(this.url+"/getmini");
   }
 }
