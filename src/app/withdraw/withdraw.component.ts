@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BankConnectionService } from '../service/bank-connection.service';
 
 @Component({
   selector: 'app-withdraw',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WithdrawComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bankConnectionService:BankConnectionService) { }
 
   ngOnInit(): void {
   }

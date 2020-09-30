@@ -13,12 +13,13 @@
                     <div class="form-group">
                         <div class="column">  
                      </div>     
-                            <div ><input type="text" class="form-control" #flashcontrol="ngModel" ngModel name="transactionPin" placeholder=" FlashPin "required="required"></div>
+                            <div ><input type="text" class="form-control" #flashcontrol="ngModel" ngModel name="transactionPin" minlength="4" maxlength="4" placeholder=" FlashPin "required="required"></div>
                       
-                            <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > Flash Pin is required </span>
+                            <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > 4 Digit Flash Pin is required </span>
                       
                             <br>
-                            <div ><input type="text" class="form-control" ngModel name="rdName" placeholder="Account Holder" required="required"></div>
+                            <div ><input type="text" class="form-control" ngModel name="rdName"  #namecontrol="ngModel"  placeholder="Account Holder" required="required"></div>
+                            <span style="color: rgb(255, 0, 0);" *ngIf="namecontrol.touched && namecontrol.invalid"  > Please enter account number </span>
                         </div>    
                         From:
                         <div>
@@ -29,12 +30,13 @@
                         <input type="date"  ngModel name="transactionTDate" >
                         </div>
                   <br>
-                  <div ><input type="text" class="form-control" ngModel name="transactionType" placeholder="Period" required="required"></div><br>
+                  
                   <div class="form-group">
-                        <input type="username" class="form-control" ngModel name="balanceAmount" placeholder="Amount" required="required">
+                        <input type="username" class="form-control" ngModel name="balanceAmount" #amountcontrol="ngModel" minlength="4" maxlength="7"  placeholder="Amount" required="required">
+                        <span style="color: rgb(255, 0, 0);" *ngIf="amountcontrol.touched && amountcontrol.invalid"  > Minimum amount 1000 </span>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Submit Now</button>
+                        <button type="submit" [disabled]="addform.invalid" class="btn btn-success btn-lg btn-block">Submit Now</button>
                     </div>
                 </form>
                

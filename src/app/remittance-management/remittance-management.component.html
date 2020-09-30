@@ -18,7 +18,8 @@
           <div class="col-50">
           
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" required="required" name="rmName" ngModel placeholder="John M. Doe">
+            <input type="text" id="fname" required="required" #namecontrol="ngModel" name="rmName" ngModel placeholder="John M. Doe">
+            <span style="color: rgb(255, 0, 0);" *ngIf="namecontrol.touched && namecontrol.invalid"  > Please enter account number </span>
 
             <h3>Auto Pay Mode</h3>
              <label for="Amount"> Amount</label>
@@ -36,7 +37,7 @@
               <label>
                 <input type="checkbox" checked="checked" name="sameadr"> Please Check For Auto Pay Mode
               </label>
-              <button type="button" class="btn btn-primary btn-sm">Activate Pay Mode</button>
+              <button type="button" [disabled]="addform.invalid" class="btn btn-primary btn-sm">Activate Pay Mode</button>
             </div>
           </div>
 
@@ -50,24 +51,28 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardName" required="required" ngModel  placeholder="John More Doe">
+            <input type="text" id="cname" name="cardName" required="required" #cardnamecontrol="ngModel" ngModel  placeholder="John More Doe">
+            <span style="color: rgb(255, 0, 0);" *ngIf="cardnamecontrol.touched && cardnamecontrol.invalid" >Name on the Card is Required </span>
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardNo" required="required" #cardcontrol="ngModel" ngModel placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardNo" required="required" #cardcontrol="ngModel" minlength="16" maxlength="16" ngModel placeholder="1111-2222-3333-4444">
 
-            <span style="color: rgb(255, 0, 0);" *ngIf="cardcontrol.touched && cardcontrol.invalid" >Card No is Required </span>
+            <span style="color: rgb(255, 0, 0);" *ngIf="cardcontrol.touched && cardcontrol.invalid" >Card Number is Required </span>
            
 
 
             <label for="expmonth">Email</label>
-            <input type="text" id="expmonth" name="email" required="required" ngModel placeholder="Email">
+            <input type="text" id="expmonth" name="email" #emailcontrol="ngModel" required="required" ngModel placeholder="Email">
+            <span style="color: rgb(255, 0, 0);" *ngIf="emailcontrol.touched && emailcontrol.invalid" >Email is Required </span>
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Exp MM/YYYY</label>
-                <input type="text" id="expyear" name="expDate" required="required" ngModel placeholder="MM/YY">
+                <input type="text" id="expyear" name="expDate" #expcontrol="ngModel" required="required" ngModel placeholder="MM/YY">
+                <span style="color: rgb(255, 0, 0);" *ngIf="expcontrol.touched && expcontrol.invalid" >Please enter expire date </span>
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" required="required" ngModel placeholder="352">
+                <input type="text" id="cvv" name="cvv" required="required" #cvvcontrol="ngModel" minlength="3" maxlength="3" ngModel placeholder="352">
+                <span style="color: rgb(255, 0, 0);" *ngIf="cvvcontrol.touched && cvvcontrol.invalid"  >CVV required </span>
               </div>
             </div>
           </div>
@@ -80,7 +85,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Check this box For Bank Representative Approval
         </label>
-        <input type="submit" value="Request For Approval" class="btn">
+        <input type="submit" [disabled]="addform.invalid" value="Request For Approval" class="btn">
       </form>
     </div>
   </div>

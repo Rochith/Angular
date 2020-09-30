@@ -20,9 +20,11 @@ Account Type :
          </div>     
          <br><br>
               
-				<div class="col"><input type="text" class="form-control" ngModel name="firstName" placeholder="First Name" required="required"></div>
+                <div class="col"><input type="text" class="form-control"  ngModel #firstcontrol="ngModel" name="firstName" placeholder="First Name" required="required"></div>
+                <span style="color: rgb(255, 0, 0);" *ngIf="firstcontrol.touched && firstcontrol.invalid"  > Enter the First Name </span>
           <br>
-				<div class="col"><input type="text" class="form-control" ngModel name="lastName" placeholder="Last Name" required="required"></div>
+                <div class="col"><input type="text" class="form-control" ngModel name="lastName" #lastcontrol="ngModel" placeholder="Last Name" required="required"></div>
+                <span style="color: rgb(255, 0, 0);" *ngIf="lastcontrol.touched && lastcontrol.invalid"  > Enter the Last Name </span>
 			</div>     <br>
          
     
@@ -41,7 +43,8 @@ Gender :
       <br><br>
       Phone :
 <input type="text" name="country code" placeholder="Country Code" disabled  value="+91" size="2"/> 
-<input type="text" name="phoneNumber" ngModel placeholder="9999999999" size="10" required> 
+<input type="text" name="phoneNumber" ngModel #mobilecontrol="ngModel" placeholder="9999999999" size="10" required> 
+<span style="color: rgb(255, 0, 0);" *ngIf="mobilecontrol.touched && mobilecontrol.invalid"  > Enter Valid Mobile Number </span>
  
          <br>
        <br>
@@ -49,7 +52,8 @@ Gender :
         </div>
       
       <div class="form-group">
-        	<input type="username" class="form-control" ngModel name="userName" placeholder="User Name" required="required">
+            <input type="username" class="form-control" ngModel name="userName" #usercontrol="ngModel" placeholder="User Name" required="required">
+            <span style="color: rgb(255, 0, 0);" *ngIf="usercontrol.touched && usercontrol.invalid"  > Enter the user name </span>
         </div>
       
       <div class="form-group">
@@ -78,7 +82,7 @@ Gender :
         </div>        
       
        <div class="form-group">
-        	<input type="aadhaar" class="form-control" #aadhaarcontrol="ngModel" ngModel name="aadharNumber" placeholder="Aadhaar Number" required="required">
+        	<input type="aadhaar" class="form-control" #aadhaarcontrol="ngModel" minlength="12" maxlength="12" ngModel name="aadharNumber" placeholder="Aadhaar Number" required="required">
         
             <span style="color: red;" *ngIf="aadhaarcontrol.touched && aadhaarcontrol.invalid" > Aadhaar required </span>
         

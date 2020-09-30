@@ -67,19 +67,22 @@
                     <div class="form-group row">
                         <label for="Account Holder Name" class="col-sm-2 col-form-label">Account Holder Name</label>
                         <div class="col-xs-4">
-                          <input type="text" class="form-control" id="Account Holder Name" required="required" name="accountHolder" ngModel placeholder="Account Holder Name">
+                          <input type="text" class="form-control" id="Account Holder Name" #namecontrol="ngModel" required="required" name="accountHolder" ngModel placeholder="Account Holder Name">
+                          <span style="color: rgb(255, 0, 0);" *ngIf="namecontrol.touched && namecontrol.invalid"  > Please enter account name </span>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="Account Number" class="col-sm-2 col-form-label">Account Number</label>
                         <div class="col-xs-4">
-                          <input type="text" class="form-control" id="Account Number" required="required" ngModel name="accountNumber" placeholder="Account Number">
+                          <input type="text" class="form-control" id="Account Number" required="required" #numbercontrol="ngModel" minlength="16" maxlength="16" ngModel name="accountNumber" placeholder="Account Number">
+                          <span style="color: rgb(255, 0, 0);" *ngIf="numbercontrol.touched && numbercontrol.invalid"  > Please enter account number </span>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="Amount" class="col-sm-2 col-form-label">Amount</label>
                         <div class="col-xs-4">
-                          <input type="text" class="form-control" id="Amount" required="required" ngModel name="accountBalance" placeholder="Amount">
+                          <input type="text" class="form-control" id="Amount" required="required" #amountcontrol="ngModel" minlength="4" ngModel name="accountBalance" placeholder="Amount">
+                          <span style="color: rgb(255, 0, 0);" *ngIf="amountcontrol.touched && amountcontrol.invalid"  > Minimum amount 1000 </span>
                         </div>
                       </div>
                       <fieldset class="form-group">
@@ -109,7 +112,7 @@
                       </fieldset>
                       <div class="form-group row">
                         <div class="col-sm-5">
-                          <button type="submit" class="btn btn-success btn-l btn-block">Submit</button>
+                          <button type="submit" [disabled]="addadmin.invalid" class="btn btn-success btn-l btn-block">Submit</button>
                         </div>
                       </div>
                     </form>

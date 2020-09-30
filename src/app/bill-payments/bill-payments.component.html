@@ -20,7 +20,8 @@
                         <div class="column">
 
 
-                            <div class="col"><input type="text" class="form-control" ngModel name="billNumber" placeholder="Account Number" required="required"></div>
+                            <div class="col"><input type="text" class="form-control" ngModel name="billNumber" #billcontrol="ngModel" minlength="4" maxlength="16" placeholder="Bill Number" required="required"></div>
+                            <span style="color: rgb(255, 0, 0);" *ngIf="billcontrol.touched && billcontrol.invalid"  > Enter Valid Bill Number</span>
 
 
                             <br>
@@ -46,20 +47,22 @@
                          
                      </div>     
                     
-                            <div class="col"><input type="text" class="form-control" ngModel name="billAmount" placeholder="Enter Amount" required="required"></div>
-                        </div>     <br>
+                            <div class="col"><input type="text" class="form-control" ngModel #amountcontrol="ngModel" minlength="2" name="billAmount" placeholder="Enter Amount" required="required">
+                              <span style="color: rgb(255, 0, 0);" *ngIf="amountcontrol.touched && amountcontrol.invalid"  > Enter the Amount </span></div>
+                        </div> 
                      
              
                   
                   <div class="col form-group">
-                        <input type="Flashpin" class="form-control" ngModel name="transactionPin" placeholder="Flash Pin" required="required">
+                        <input type="Flashpin" class="form-control" #flashcontrol="ngModel" minlength="4" maxlength="4" ngModel name="transactionPin" placeholder="Flash Pin" required="required">
+                        <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > 4 Digit Flash Pin is required </span>
                     </div>
                   
                         <div class="col form-group">
                         <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
                     </div>
                     <div class="col form-group">
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+                        <button type="submit" [disabled]="addbillform.invalid" class="btn btn-success btn-lg btn-block">Submit</button>
                     </div>
                 </form>
                   </div>

@@ -5,15 +5,16 @@
             <div class="col-md-4">
                
                 <h2><b>FIXED DEPOSIT</b></h2>
-                <form action="" method="post" #addfixedfrom="ngForm" (ngSubmit)="addFixedDeposit(addfixedfrom.value)">
+                <form action="" method="post" #addfixedform="ngForm" (ngSubmit)="addFixedDeposit(addfixedform.value)">
                     Flashpin:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control" required="required" name="transactionPin"  #flashcontrol="ngModel" ngModel placeholder="Enter MPin"  >
-                        <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > Flash Pin is required </span>
+                        <input type="text" class="form-control" required="required" name="transactionPin" minlength="4" maxlength="4"  #flashcontrol="ngModel" ngModel placeholder="Enter FlashPin"  >
+                        <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid"  > 4 Digit Flash Pin is required </span>
                     </div>
                     Account Holder:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control" required="required" name="fdName" ngModel  placeholder="Holder Name"  >
+                        <input type="text" class="form-control" required="required" name="fdName" ngModel #namecontrol="ngModel"  placeholder="Holder Name"  >
+                        <span style="color: rgb(255, 0, 0);" *ngIf="namecontrol.touched && namecontrol.invalid"  > Please enter account number </span>
                     </div>
                     From:
                     <div>
@@ -25,10 +26,11 @@
                     </div>
                     Amount:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control" required="required" ngModel placeholder="Amount" name="balanceAmount" >
+                        <input type="text" class="form-control" required="required" #amountcontrol="ngModel" minlength="4"  ngModel placeholder="Amount" name="balanceAmount" >
+                        <span style="color: rgb(255, 0, 0);" *ngIf="amountcontrol.touched && amountcontrol.invalid"  > Minimum amount 1000 </span>
                     </div>
                    <div class="form-group">
-                    <button type="submit"   name="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" [disabled]="addfixedform.invalid"  name="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>  
                 <!-- <form  #addform="ngForm" (ngSubmit)="addFixedDeposit(addform.value)" >
