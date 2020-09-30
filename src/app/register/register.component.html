@@ -53,25 +53,35 @@ Gender :
         </div>
       
       <div class="form-group">
-        	<input type="email" class="form-control" ngModel name="email" placeholder="Email" required="required">
+            <input type="email" class="form-control" #emailcontrol="ngModel"  ngModel  name="email" placeholder="Email" required="required">
+            <span style="color: red;" *ngIf="emailcontrol.touched && emailcontrol.invalid" > Email is required </span>
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" ngModel name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" #passcontrol="ngModel" ngModel name="password" placeholder="Password Should Contain (@,.&Number)" required="required">
+            <span style="color: red;" *ngIf="passcontrol.touched && passcontrol.invalid" > Password is required </span>
+        
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control"  name="confirm_password" placeholder="Confirm Password" required="required">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Password Should Contain (@,.&Number)" required="required">
+           
+
+
         </div>        
       
       
       <div class="form-group">
-            <input type="text" class="form-control" ngModel name="transactionPin" placeholder="Flashpin" required="required">
+            <input type="password" class="form-control" #flashcontrol="ngModel" ngModel name="transactionPin" placeholder="Flashpin should be 4 digit" required="required">
+            <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > Flash Pin is required </span>
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Flashpin" required="required">
         </div>        
       
        <div class="form-group">
-        	<input type="aadhaar" class="form-control" ngModel name="aadharNumber" placeholder="Aadhaar Number" required="required">
+        	<input type="aadhaar" class="form-control" #aadhaarcontrol="ngModel" ngModel name="aadharNumber" placeholder="Aadhaar Number" required="required">
+        
+            <span style="color: red;" *ngIf="aadhaarcontrol.touched && aadhaarcontrol.invalid" > Aadhaar required </span>
+        
         </div>
             <div class="form-group">
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>

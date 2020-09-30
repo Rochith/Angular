@@ -7,13 +7,17 @@
               <h5 class="card-title text-center">Sign In</h5>
               <form class="form-signin"   #loginform="ngForm"  (ngSubmit)="checkLogin(loginform.value)">
                 <div class="form-label-group">
-                  <input type="text"  class="form-control" placeholder="username"  name="username" ngModel  required autofocus>
-                  <label for="username">UserName</label>
+                  <input type="text"  class="form-control" placeholder="username"  name="username" #usercontrol="ngModel"   ngModel  required autofocus>
+                  <label for="username"></label>
+
+                  <span style="color: rgb(255, 0, 0);" *ngIf="usercontrol.touched && usercontrol.invalid" > Username Is Required </span>
+
                 </div>
   
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control"  name="password"  ngModel  placeholder="Password" required>
-                  <label for="password">Password</label>
+                  <input type="password" id="inputPassword" class="form-control"  name="password" #passcontrol="ngModel" ngModel  placeholder="Password" required>
+                  <label for="password"></label>
+                  <span style="color: rgb(255, 0, 0);" *ngIf="passcontrol.touched && passcontrol.invalid" > Password Is Required </span>
                 </div>
   
                 <div class="custom-control custom-checkbox mb-3">

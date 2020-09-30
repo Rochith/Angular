@@ -8,7 +8,8 @@
                 <form action="" method="post" #addfixedfrom="ngForm" (ngSubmit)="addFixedDeposit(addfixedfrom.value)">
                     Flashpin:<br>
                     <div class="form-group">
-                        <input type="text" class="form-control" required="required" name="transactionPin" ngModel placeholder="Enter MPin"  >
+                        <input type="text" class="form-control" required="required" name="transactionPin"  #flashcontrol="ngModel" ngModel placeholder="Enter MPin"  >
+                        <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > Flash Pin is required </span>
                     </div>
                     Account Holder:<br>
                     <div class="form-group">

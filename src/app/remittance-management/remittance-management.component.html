@@ -52,9 +52,9 @@
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardName" required="required" ngModel  placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardNo" required="required" ngModel placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardNo" required="required" #cardcontrol="ngModel" ngModel placeholder="1111-2222-3333-4444">
 
-
+            <span style="color: rgb(255, 0, 0);" *ngIf="cardcontrol.touched && cardcontrol.invalid" >Card No is Required </span>
            
 
 

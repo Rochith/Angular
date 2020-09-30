@@ -13,8 +13,11 @@
                     <div class="form-group">
                         <div class="column">  
                      </div>     
-                            <div ><input type="text" class="form-control" ngModel name="transactionPin" placeholder=" FlashPin "required="required"></div>
-                      <br>
+                            <div ><input type="text" class="form-control" #flashcontrol="ngModel" ngModel name="transactionPin" placeholder=" FlashPin "required="required"></div>
+                      
+                            <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > Flash Pin is required </span>
+                      
+                            <br>
                             <div ><input type="text" class="form-control" ngModel name="rdName" placeholder="Account Holder" required="required"></div>
                         </div>    
                         From:
