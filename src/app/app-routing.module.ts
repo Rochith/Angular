@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BalanceComponent } from './balance/balance.component';
 import { BillPaymentsComponent } from './bill-payments/bill-payments.component';
 import { EstatementComponent } from './estatement/estatement.component';
 import { FixedDepositComponent } from './fixed-deposit/fixed-deposit.component';
@@ -32,7 +33,8 @@ const routes: Routes = [
    {path:'mini-statement',component:MiniStatementComponent,canActivate:[AuthGuardService]},
    {path:'estatement',component:EstatementComponent,canActivate:[AuthGuardService]},
    {path:'withdraw',component:WithdrawComponent,canActivate:[AuthGuardService]},
-   {path:'transfer',component:TransferComponent,canActivate:[AuthGuardService]}
+   {path:'transfer',component:TransferComponent,canActivate:[AuthGuardService]},
+   {path:'balance',component:BalanceComponent,canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

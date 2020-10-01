@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from './admin';
+import { Balance } from './balance';
 import { BillPayments } from './billpayments';
 import { Fixed } from './fixeddeposite';
 import { Register } from './register';
@@ -55,5 +56,8 @@ export class BankConnectionService {
     this.http.post<Transfer>(this.url+"/transfer",transfer)
     .subscribe(transfer=>alert("Amount Transfered to "+transfer.tarnsferAccount));
     console.log(transfer);
+  }
+  getBalance():Observable<any>{
+    return this.http.get(this.url+"/balance");
   }
 }

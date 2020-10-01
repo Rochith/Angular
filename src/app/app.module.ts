@@ -24,6 +24,7 @@ import { MiniStatementComponent } from './mini-statement/mini-statement.componen
 import { EstatementComponent } from './estatement/estatement.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TransferComponent } from './transfer/transfer.component';
     MiniStatementComponent,
     EstatementComponent,
     WithdrawComponent,
-    TransferComponent
+    TransferComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,
