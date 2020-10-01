@@ -7,6 +7,8 @@ import { Fixed } from './fixeddeposite';
 import { Register } from './register';
 import { RemittanceManagement } from './remittance';
 import { ReoccuringAccount } from './reoccuringaccount';
+import { Transfer } from './transfer';
+import { WithDraw } from './withdraw';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +46,14 @@ export class BankConnectionService {
   addAdmin(admin:Admin){
     this.http.post<Admin>(this.url+"/deposit",admin)
     .subscribe(admin=>alert("Added successfully"+admin.accountNumber));
+  }
+  addAmount(withdraw:WithDraw){
+    this.http.post<WithDraw>(this.url+"/withdraw",withdraw)
+    .subscribe(withdraw=>alert("Money WithDraw"+withdraw.withdrawAmount));
+  }
+  addTransfer(transfer:Transfer){
+    this.http.post<Transfer>(this.url+"/transfer",transfer)
+    .subscribe(transfer=>alert("Amount Transfered to "+transfer.tarnsferAccount));
+    console.log(transfer);
   }
 }

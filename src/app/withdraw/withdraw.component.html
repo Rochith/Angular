@@ -1,7 +1,4 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" >
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 
 <br>
 
@@ -9,44 +6,45 @@
 
 <div class="container">
 	<div class="row-fluid">
-      <form class="form-horizontal">
+      <form class="form-horizontal" #addform="ngForm" (ngSubmit)="addAmount(addform.value)">
         <fieldset>
           <div id="legend">
             <legend class="">Payment</legend>
           </div>
-     
         
-
-          <div class="control-group">
+               <div class="control-group">
             <label class="control-label" for="at">Amount to Withdraw</label>
             <div class="controls">
-              <input type="text" id="at" name="at" placeholder="Amount To Transfer" class="input-xlarge">
+              <input type="text"  name="withdrawAmount" #amountcontrol="ngModel" ngModel placeholder="Amount To WithDraw" required="required" class="input-xlarge">
+              <span style="color: rgb(255, 0, 0);" *ngIf="amountcontrol.touched && amountcontrol.invalid" > Enter the Amount </span>
             </div>
           </div>
+         
 
-
-     
-     
           <!-- CVV -->
+        
           <div class="control-group">
             <label class="control-label"  for="password_confirm">Enter Flash Pin</label>
             <div class="controls">
-              <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="span2">
+              <input type="password" id="password_confirm" name="transactionPin" #flashcontrol="ngModel" ngModel minlength="4" maxlength="4" required="required" placeholder="FlashPin" class="span2">
+              <span style="color: rgb(255, 0, 0);" *ngIf="flashcontrol.touched && flashcontrol.invalid" > 4 Digit Flash Pin is required </span>
             </div>
           </div>
+         
 <br>
   
           <!-- Submit -->
+   
           <div class="control-group">
             <div class="controls">
-              <button onclick="alert('Money Debited Successfully xxxx xxxx xxxx xx06')"  class="btn btn-success">Withdraw</button>
+              <button type="submit" [disabled]="addform.invalid"  class="btn btn-success">Withdraw</button>
             </div>
           </div>
+      
      <br>
      <br>
         </fieldset>
       </form>
-
 
     </div>
 </div>

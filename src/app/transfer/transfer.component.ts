@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BankConnectionService } from '../service/bank-connection.service';
+import { Transfer } from '../service/transfer';
 
 @Component({
   selector: 'app-transfer',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bankConnectionService:BankConnectionService) { }
 
   ngOnInit(): void {
+  }
+  addTransfer(transfer:Transfer){
+    this.bankConnectionService.addTransfer(transfer);
   }
 
 }
