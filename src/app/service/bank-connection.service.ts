@@ -22,15 +22,15 @@ export class BankConnectionService {
 
   addRegister(register:Register){
     this.http.post<Register>(this.url+"/add",register)
-    .subscribe(register=>alert("Successfully Registered"+register.userId));
+    .subscribe(register=>alert("Your Registration is Successfull :"+register.userId));
   }
   addFixedDeposit(fixed:Fixed){
     this.http.post<Fixed>(this.url+"/fdadd",fixed)
-    .subscribe(fixed=>alert("Your Fixed Deposit Account is successfully" + fixed.fixedDepositId)); 
+    .subscribe(fixed=>alert("Your Fixed Deposit Account is successfully Created With Id :" + fixed.fixedDepositId)); 
   }
   addReoccuringAccount(reoccuring:ReoccuringAccount){
     this.http.post<ReoccuringAccount>(this.url+"/rdadd",reoccuring)
-    .subscribe(reoccuring=>alert("Your Reoccuring Account is successfully" + reoccuring.reoccuringAccountId));
+    .subscribe(reoccuring=>alert("Your Reoccuring Account is successfully Created With Id :" + reoccuring.reoccuringAccountId));
     console.log(reoccuring);
   }
   addRemittanceManagement(remittance:RemittanceManagement){
@@ -42,19 +42,19 @@ export class BankConnectionService {
   }
   addBillPayments(billpayments:BillPayments){
     this.http.post<BillPayments>(this.url+"/bill",billpayments)
-    .subscribe(billpayments=>alert("Payments Successful"+billpayments.billNumber));
+    .subscribe(billpayments=>alert("Payments Successfull Of Bill Number :"+billpayments.billNumber));
   }
   addAdmin(admin:Admin){
     this.http.post<Admin>(this.url+"/deposit",admin)
-    .subscribe(admin=>alert("Added successfully"+admin.accountNumber));
+    .subscribe(admin=>alert("Amount Added Successfully To Account Number :"+admin.accountNumber));
   }
   addAmount(withdraw:WithDraw){
     this.http.post<WithDraw>(this.url+"/withdraw",withdraw)
-    .subscribe(withdraw=>alert("Money WithDraw"+withdraw.withdrawAmount));
+    .subscribe(withdraw=>alert("Money withdraw was successfull of Amount :"+withdraw.withdrawAmount));
   }
   addTransfer(transfer:Transfer){
     this.http.post<Transfer>(this.url+"/transfer",transfer)
-    .subscribe(transfer=>alert("Amount Transfered to "+transfer.tarnsferAccount));
+    .subscribe(transfer=>alert("Amount Transfered to Account Number :"+transfer.tarnsferAccount));
     console.log(transfer);
   }
   getBalance():Observable<any>{
